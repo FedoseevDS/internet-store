@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Main from "./page/main";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter> 
+      <Routes>
+        <Route exact path="/" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
+// BrowserRouter - создает маршрутизацию в проекте
+// Routes - рендерит первый совпавший url адрес, проверяет сверху-вниз
+// Route - путь к компоненте, exact - отображает первой, path - url адрес, element - название отображаемой компоненты
 
 export default App;
